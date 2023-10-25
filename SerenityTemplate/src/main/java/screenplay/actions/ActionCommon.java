@@ -1,10 +1,13 @@
 package screenplay.actions;
 
 import net.serenitybdd.core.Serenity;
+import net.serenitybdd.core.pages.ResolvableElement;
+import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.ensure.Ensure;
+import net.serenitybdd.screenplay.questions.Attribute;
 import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
@@ -90,10 +93,9 @@ public class ActionCommon {
         Serenity.recordReportData().withTitle("Text of " + targetLocators.getName()).andContents(text);
         return text;
     }
-
-    public void checkPrice (Target price1, Target price2){
-        String pricePLD = theActorInTheSpotlight().getName();
-        
+    public String getAttribute (Target targetLocators, String attributeName) {
+        String valueAttribute = theActorInTheSpotlight().asksFor(Attribute.of(targetLocators).named(attributeName));
+        return valueAttribute;
     }
 
 }
