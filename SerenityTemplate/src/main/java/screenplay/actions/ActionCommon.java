@@ -91,4 +91,9 @@ public class ActionCommon {
         return text;
     }
 
+    public void checkPrice (Target price1, Target price2){
+        String pricePLD = theActorInTheSpotlight().getName();
+        
+    }
+
 }

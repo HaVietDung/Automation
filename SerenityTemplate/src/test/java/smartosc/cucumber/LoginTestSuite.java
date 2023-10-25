@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         plugin = "pretty",
         features = "src/test/resources/features/login",
         glue = {"smartosc.hook", "smartosc.login"},
-        tags = "@login"
+        tags = "@compare"
 )
 public class LoginTestSuite {
 }
