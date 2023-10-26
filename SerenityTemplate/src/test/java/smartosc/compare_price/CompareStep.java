@@ -15,11 +15,6 @@ public class CompareStep {
     @Steps
     ActionCommon action;
 
-    @Given("{actor} open url {word}")
-    public  void openUrl(Actor actor, String url){
-        actor.wasAbleTo(Start.openBrowser(url));
-    }
-
     @When("Select Product")
     public void selectProduct(){
         action.clickElement(CompareComponent.listCategory);
@@ -33,11 +28,9 @@ public class CompareStep {
         String pricePLP = action.getText(CompareComponent.productPricePLP);
         String pricePDP = action.getText(CompareComponent.productPricePDP);
         if(pricePLP.equals(pricePDP)){
-            System.out.println("Price is corect");
+            System.out.println("Price is correct");
         } else {
             System.out.println("Price is false");
         }
     }
-
-
 }

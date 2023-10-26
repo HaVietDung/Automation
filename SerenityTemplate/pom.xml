@@ -96,6 +96,7 @@
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>${maven.surefire.version}</version>
+<!--                <version>3.0.0-M9</version>-->
                 <configuration>
                     <includes>
                         <include>smartosc/cucumber/*${testsuite}.java</include>

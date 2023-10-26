@@ -15,13 +15,12 @@ Feature: Login
 
     Examples:
       | url                          | email                         | pass      |
-      | https://www.lg.com/uk/login/ | kimvt_uk_b2c_prod@yopmail.com | Hg281291@
+      | https://www.lg.com/uk/login/ | kimvt_uk_b2c_prod@yopmail.com | Hg281291@ |
 
 @compare
-Feature: Compare
   Scenario Outline: Compare giá sản phẩm ở PDP và PLD
 
-    Given Open url <url>
+  Given Auto open url <url>
 
     When Select Product
 
