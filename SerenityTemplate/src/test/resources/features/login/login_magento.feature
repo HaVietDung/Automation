@@ -22,7 +22,12 @@ Feature: Login
 
   Given Auto open url <url>
 
-    When Compare Price PLP & PDP
+    When Select Category TV_Audio_Video
+    And Select SubCategory QNED
+    And Select Random Product and Get Price
+    And Product Detail and Get Price
+    Then Compare Price
+
     Examples:
       | url  |
       | https://www.lg.com/uk/ |
