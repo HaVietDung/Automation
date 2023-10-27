@@ -21,17 +21,17 @@ public class Setup {
         OnStage.setTheStage(new OnlineCast());
     }
 
-//    @After
-//    public void runSerenityAggregate() {
-//        String os = System.getProperty("os.name");
-//        if (!os.startsWith("Windows")) {
-//            return;
-//        }
-//        try {
-//            Runtime.getRuntime().exec("cmd.exe /c mvn serenity:aggregate");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    @After
+    public void runSerenityAggregate() {
+        String os = System.getProperty("os.name");
+        if (!os.startsWith("Windows")) {
+            return;
+        }
+        try {
+            Runtime.getRuntime().exec("cmd.exe /c mvn serenity:aggregate");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

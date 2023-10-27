@@ -1,5 +1,6 @@
 package smartosc.compare_price;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -18,19 +19,24 @@ public class CompareStep {
     @When("Select Product")
     public void selectProduct(){
         action.clickElement(CompareComponent.listCategory);
-        action.clickElement(CompareComponent.subCategory);;
-        action.clickElement(CompareComponent.product);
-        action.getAttribute(CompareComponent.attributeProduct, "data-sku");
-    }
 
-    @Then("Compare Price")
-    public void checkPrice(){
+        action.clickElement(CompareComponent.subCategory);
         String pricePLP = action.getText(CompareComponent.productPricePLP);
+        System.out.println(pricePLP);
+
+        action.clickElement(CompareComponent.product);
         String pricePDP = action.getText(CompareComponent.productPricePDP);
+        System.out.println("Price in PDP: "+pricePDP);
+
+        String attribute = action.getAttribute(CompareComponent.attributeProduct, "data-sku");
+        System.out.println("Attribute: "+ attribute);
+
         if(pricePLP.equals(pricePDP)){
             System.out.println("Price is correct");
         } else {
             System.out.println("Price is false");
         }
     }
+
+
 }

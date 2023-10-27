@@ -23,8 +23,6 @@ Feature: Login
   Given Auto open url <url>
 
     When Select Product
-
-    Then Compare Price
     Examples:
       | url  |
       | https://www.lg.com/uk/ |
