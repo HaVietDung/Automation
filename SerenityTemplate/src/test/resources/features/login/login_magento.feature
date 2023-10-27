@@ -22,7 +22,7 @@ Feature: Login
 
   Given Auto open url <url>
 
-    When Select Product
+    When Compare Price PLP & PDP
     Examples:
       | url  |
       | https://www.lg.com/uk/ |

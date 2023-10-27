@@ -16,7 +16,7 @@ public class CompareStep {
     @Steps
     ActionCommon action;
 
-    @When("Select Product")
+    @When("Compare Price PLP & PDP")
     public void selectProduct(){
         action.clickElement(CompareComponent.listCategory);
 
