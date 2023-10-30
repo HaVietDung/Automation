@@ -11,9 +11,12 @@ import net.serenitybdd.screenplay.questions.Attribute;
 import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import net.thucydides.core.webdriver.ThucydidesWebDriverSupport;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
@@ -96,6 +99,11 @@ public class ActionCommon {
     public String getAttribute (Target targetLocators, String attributeName) {
         String valueAttribute = theActorInTheSpotlight().asksFor(Attribute.of(targetLocators).named(attributeName));
         return valueAttribute;
+    }
+
+    public List<WebElement> getListElements(String xpath) {
+        Target targetLocators = Target.the(xpath).locatedBy(xpath);
+        return ThucydidesWebDriverSupport.getDriver().findElements(By.xpath(targetLocators.getCssOrXPathSelector()));
     }
 
 }

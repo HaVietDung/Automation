@@ -1,6 +1,8 @@
 package screenplay.page;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
+import org.openqa.selenium.WebElement;
 
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
 

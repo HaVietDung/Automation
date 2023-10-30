@@ -21,7 +21,6 @@ Feature: Login
   Scenario Outline: Compare giá sản phẩm ở PDP và PLD
 
   Given Auto open url <url>
-
     When Select Category TV_Audio_Video
     And Select SubCategory QNED
     And Select Random Product and Get Price
@@ -29,7 +28,7 @@ Feature: Login
     Then Compare Price
 
     Examples:
-      | url  |
+      | url |
       | https://www.lg.com/uk/ |
 
 @lesson4
