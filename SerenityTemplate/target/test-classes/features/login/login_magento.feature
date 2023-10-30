@@ -32,3 +32,12 @@ Feature: Login
       | url  |
       | https://www.lg.com/uk/ |
 
+@lesson4
+  Scenario Outline: Get List Product And Export To File
+  Given Auto open url <url1>
+    When Select Random Category
+    And Select Random SubCategory
+
+    Examples:
+      | url1 |
+      | https://www.lg.com/uk/ |

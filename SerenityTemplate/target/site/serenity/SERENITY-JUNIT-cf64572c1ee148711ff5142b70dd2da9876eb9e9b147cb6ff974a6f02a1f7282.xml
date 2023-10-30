@@ -1,1 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Login" skipped="0" tests="1" time="27.16" timestamp="2023-10-27 01:46:04"><testcase name="Compare giá sản phẩm ở PDP và PLD"/></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="Login" skipped="0" tests="1" time="15.5" timestamp="2023-10-30 09:56:27"><testcase name="Compare giá sản phẩm ở PDP và PLD"><error type="java.lang.ExceptionInInitializerError"/><system-err>null&#13;
+smartosc.compare_price.CompareStep.selectCategory(CompareStep.java:27)&#13;
+✽.Select Category TV_Audio_Video(file:///C:/Users/dunghv1/Desktop/Automation/SerenityTemplate/src/test/resources/features/login/login_magento.feature:25)&#13;
+</system-err></testcase></testsuite>

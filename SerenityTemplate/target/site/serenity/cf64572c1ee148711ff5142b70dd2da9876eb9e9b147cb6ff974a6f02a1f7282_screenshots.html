@@ -154,7 +154,7 @@
             <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 27-10-2023 13:46</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 30-10-2023 09:56</span>
     <br style="clear:left"/>
 </div>
 
@@ -195,9 +195,9 @@
                 <table class="outcome-header">
                     <tr>
                         <td colspan="2" class="test-title-bar">
-                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon fa-2x' title='ERROR'></i></a></span>
                             <span class="test-case-title">
-                                <span class="success-color">Compare gi&aacute; sản phẩm ở PDP v&agrave; PLD
+                                <span class="error-color">Compare gi&aacute; sản phẩm ở PDP v&agrave; PLD
                                     <span class="related-issue-title"></span>
                                 </span>
                             </span>
@@ -218,29 +218,51 @@
 
     <div id="beforetable"></div>
     <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">Exception in initializer error</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall"
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="bi bi-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>java.lang.ExceptionInInitializerError </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>smartosc.compare_price.CompareStep.selectCategory(CompareStep.java:27)<br />✽.Select Category TV_Audio_Video(file:///C:/Users/dunghv1/Desktop/Automation/SerenityTemplate/src/test/resources/features/login/login_magento.feature:25)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+                <div class="panel-body">
+                    <a href="pagesource10543102511542363521.html" target="_blank" class="btn btn-info">HTML Source</a>
+                </div>
+            </div>
         <div class="slider-wrapper theme-default">
             <div id="slider">
-                <img src="fe7d5185edc7b7b106fb00153677b673fa4311d3985a2c42875b26c0811325b3.png" title=" 1: Compare gi&aacute; sản phẩm ở PDP v&agrave; PLD ({url=https://www.lg.com/uk/})" width="1920"/>
-                <img src="fe7d5185edc7b7b106fb00153677b673fa4311d3985a2c42875b26c0811325b3.png" title=" Given Auto open url https://www.lg.com/uk/" width="1920"/>
-                <img src="fe7d5185edc7b7b106fb00153677b673fa4311d3985a2c42875b26c0811325b3.png" title=" Open url https://www.lg.com/uk/" width="1920"/>
-                <img src="fe7d5185edc7b7b106fb00153677b673fa4311d3985a2c42875b26c0811325b3.png" title=" Auto opens the https://www.lg.com/uk/" width="1920"/>
-                <img src="fe7d5185edc7b7b106fb00153677b673fa4311d3985a2c42875b26c0811325b3.png" title=" Open url https://www.lg.com/uk/ (completed)" width="1920"/>
-                <img src="fe7d5185edc7b7b106fb00153677b673fa4311d3985a2c42875b26c0811325b3.png" title=" Given Auto open url https://www.lg.com/uk/ (completed)" width="1920"/>
-                <img src="2c3abac15bd356709c2bb8148047fc9e0514154b802260b119b22ff10683126a.png" title=" When Select Category TV_Audio_Video" width="1920"/>
-                <img src="2c3abac15bd356709c2bb8148047fc9e0514154b802260b119b22ff10683126a.png" title=" Auto clicks on TV_Audio_Video" width="1920"/>
-                <img src="2c3abac15bd356709c2bb8148047fc9e0514154b802260b119b22ff10683126a.png" title=" When Select Category TV_Audio_Video (completed)" width="1920"/>
-                <img src="26214572b8168f0900d41a67de895f302ff57a2af66206e59657c7f49549fb82.png" title=" And Select SubCategory QNED" width="1920"/>
-                <img src="26214572b8168f0900d41a67de895f302ff57a2af66206e59657c7f49549fb82.png" title=" Auto clicks on QNED" width="1920"/>
-                <img src="26214572b8168f0900d41a67de895f302ff57a2af66206e59657c7f49549fb82.png" title=" And Select SubCategory QNED (completed)" width="1920"/>
-                <img src="3d9b8a4e79f53e5b826367ec0c8758ec6b9ad82f89198c2d4845d53a8b0d35a9.png" title=" And Select Random Product and Get Price" width="1920"/>
-                <img src="3d9b8a4e79f53e5b826367ec0c8758ec6b9ad82f89198c2d4845d53a8b0d35a9.png" title=" Auto should see Product_Price_PLP that is displayed" width="1920"/>
-                <img src="3d9b8a4e79f53e5b826367ec0c8758ec6b9ad82f89198c2d4845d53a8b0d35a9.png" title=" And Select Random Product and Get Price (completed)" width="1920"/>
-                <img src="9be28ecd0bb929f634419581e6ca016a8157fb192554e289c950401d597fe890.png" title=" And Product Detail and Get Price" width="1920"/>
-                <img src="9be28ecd0bb929f634419581e6ca016a8157fb192554e289c950401d597fe890.png" title=" Auto clicks on Product" width="1920"/>
-                <img src="68cd5262b5549044b8ca550ab7e7759480e1150f5707ee07d1158650592490cc.png" title=" Auto should see Product_Price_PDP that is displayed" width="1920"/>
-                <img src="68cd5262b5549044b8ca550ab7e7759480e1150f5707ee07d1158650592490cc.png" title=" And Product Detail and Get Price (completed)" width="1920"/>
-                <img src="68cd5262b5549044b8ca550ab7e7759480e1150f5707ee07d1158650592490cc.png" title=" Then Compare Price" width="1920"/>
-                <img src="68cd5262b5549044b8ca550ab7e7759480e1150f5707ee07d1158650592490cc.png" title=" 1: Compare gi&aacute; sản phẩm ở PDP v&agrave; PLD ({url=https://www.lg.com/uk/}) (completed): <span class='success-color'>SUCCESS</span>" width="1920"/>
+                <img src="2c178bafc373c016b3cd2b4b6feebf2401b93f6fca5cbb9abb8920819b09d95c.png" title=" 1: Compare gi&aacute; sản phẩm ở PDP v&agrave; PLD ({url=https://www.lg.com/uk/})" width="1920"/>
+                <img src="2c178bafc373c016b3cd2b4b6feebf2401b93f6fca5cbb9abb8920819b09d95c.png" title=" Given Auto open url https://www.lg.com/uk/" width="1920"/>
+                <img src="2c178bafc373c016b3cd2b4b6feebf2401b93f6fca5cbb9abb8920819b09d95c.png" title=" Open url https://www.lg.com/uk/" width="1920"/>
+                <img src="2c178bafc373c016b3cd2b4b6feebf2401b93f6fca5cbb9abb8920819b09d95c.png" title=" Auto opens the https://www.lg.com/uk/" width="1920"/>
+                <img src="2c178bafc373c016b3cd2b4b6feebf2401b93f6fca5cbb9abb8920819b09d95c.png" title=" Given Auto open url https://www.lg.com/uk/" width="1920"/>
+                <img src="2c178bafc373c016b3cd2b4b6feebf2401b93f6fca5cbb9abb8920819b09d95c.png" title=" Open url https://www.lg.com/uk/ (completed)" width="1920"/>
+                <img src="550b7b4eea9c8401448e2e799313d965ac6bdce5461a3e857a52397fb6bd664c.png" title=" When Select Category TV_Audio_Video: <span class='error-color'>ERROR</span>" width="1920"/>
             </div>
         </div>
 
