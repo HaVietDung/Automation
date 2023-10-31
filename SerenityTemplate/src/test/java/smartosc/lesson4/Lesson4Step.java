@@ -4,6 +4,7 @@ import com.paulhammant.ngwebdriver.ByAngular;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import io.cucumber.java.eo.Se;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.targets.Target;
@@ -33,20 +34,61 @@ public class Lesson4Step {
 
     @When("Select Random Category")
     public void selectCategory() {
-        List<WebElement> listCategory = ThucydidesWebDriverSupport.getDriver().findElements(By.xpath("//div[@class='c-gnb__container']//li[@class='cmp-navigation__item cmp-navigation__item--level-0 c-gnb__item c-gnb__item--depth1']"));
-        int size = listCategory.size()/2 - 1;
+        List<WebElement> listCategory = ThucydidesWebDriverSupport.getDriver().findElements(By.xpath("(//div[@class='navigation c-gnb c-gnb__desktop']//li[@class='cmp-navigation__item cmp-navigation__item--level-0 c-gnb__item c-gnb__item--depth1'])"));
+        int size = listCategory.size();
         Random randomCategory = new Random();
-        int valueRandom = randomCategory.nextInt(size);
-        WebElement category = listCategory.get(valueRandom);
-        category.click();
+//        int valueRandom = randomCategory.nextInt(size);
+        int valueRandom = 2;
+        Serenity.setSessionVariable("valueRandomCategory").to(valueRandom);
+        String xpathCategory = "(//div[@class='navigation c-gnb c-gnb__desktop']//li[@class='cmp-navigation__item cmp-navigation__item--level-0 c-gnb__item c-gnb__item--depth1'])";
+        Serenity.setSessionVariable("xpathCategory").to(xpathCategory);
+        if (valueRandom > 0) {
+            WebElement category = ThucydidesWebDriverSupport.getDriver().findElement(By.xpath("(//div[@class='navigation c-gnb c-gnb__desktop']//li[@class='cmp-navigation__item cmp-navigation__item--level-0 c-gnb__item c-gnb__item--depth1'])" + "[" + valueRandom + "]"));
+            category.click();
+            action.pause(5000);
+
+        } else {
+            System.out.println("value random = "+valueRandom);
+        }
+
     }
     @And("Select Random SubCategory")
     public void selectSubCategory(){
-        List<WebElement> listSubcategory = ThucydidesWebDriverSupport.getDriver().findElements(By.xpath("//li[@class='cmp-navigation__item cmp-navigation__item--level-3 c-gnb__item c-gnb__item--detail']"));
-        int size = listSubcategory.size()/2;
+
+//        call variable
+        int valueRandomCategory = Serenity.sessionVariableCalled("valueRandomCategory");
+        String xpathCategory = Serenity.sessionVariableCalled("xpathCategory");
+
+//        get xpath subcategory
+        List<WebElement> listSubcategory = ThucydidesWebDriverSupport.getDriver().findElements(By.xpath(xpathCategory + "[" + valueRandomCategory + "]" + "//li[@class='cmp-navigation__item cmp-navigation__item--level-3 c-gnb__item c-gnb__item--detail']"));
+        int size = listSubcategory.size();
         Random randomSubcategory = new Random();
-        int valueRandom = randomSubcategory.nextInt(size/4);
+//        int valueRandom = randomSubcategory.nextInt(size);
+        int valueRandom = 2;
+//        select randomsub category
         WebElement subCategory = listSubcategory.get(valueRandom);
         subCategory.click();
+        System.out.println(subCategory);
+        action.pause(5000);
+    }
+
+    @And("Get Data In PDP")
+    public void getDataInPDP(){
+
+        List<WebElement> listPage = ThucydidesWebDriverSupport.getDriver().findElements(By.xpath("//li[@class='c-page__item']"));
+        List<WebElement> listProduct = ThucydidesWebDriverSupport.getDriver().findElements(By.xpath("//li[@class='c-product-list__item productcollection__item']"));
+        int sizePage = listPage.size();
+        int sizeProduct = listProduct.size();
+        System.out.println("size pase: "+sizePage);
+        System.out.println("size product: "+sizeProduct);
+        for (int i=1; i < sizePage; i++){
+            for (int j=1; j < sizeProduct; j++){
+                WebElement data_s = ThucydidesWebDriverSupport.getDriver().findElement(By.xpath("//li[@class='c-product-list__item productcollection__item']"+"[" + j + "]" + "//div[@class='c-product-item__ufn']//a"));
+                String atrtibute = data_s.getAttribute("data-s");
+                System.out.println("list attribute: " + atrtibute);
+            }
+            WebElement numPage = listPage.get(i);
+            numPage.click();
+        }
     }
 }

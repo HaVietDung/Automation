@@ -47,7 +47,7 @@ public class CompareStep {
         int size = listProduct.size();
         Random randomListProduct = new Random();
         int randomValue = randomListProduct.nextInt(size);
-        for(int i=1; i <= size; i++){
+        if (randomValue > 0){
             WebElement product = ThucydidesWebDriverSupport.getDriver().findElement(By.xpath("(//li[@class='c-product-list__item productcollection__item'])"+"["+randomValue+"]"));
 
 //        get price in PDP
@@ -71,7 +71,9 @@ public class CompareStep {
             } catch (Exception e) {
                 System.out.println(e);
             }
-            break;
+
+        } else {
+            System.out.println("randomValue = "+ randomValue);
         }
     }
 
@@ -85,7 +87,6 @@ public class CompareStep {
         } catch (Exception e){
             System.out.println(e);
         }
-
     }
 
     @Then ("Compare Price")

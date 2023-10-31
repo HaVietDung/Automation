@@ -36,6 +36,7 @@ Feature: Login
   Given Auto open url <url1>
     When Select Random Category
     And Select Random SubCategory
+    And Get Data In PDP
 
     Examples:
       | url1 |
