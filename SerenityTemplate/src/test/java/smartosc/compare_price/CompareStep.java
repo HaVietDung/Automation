@@ -22,6 +22,7 @@ import java.util.Optional;
 import java.util.Random;
 
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
+import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.isDriverInstantiated;
 
 public class CompareStep {
     @Steps
@@ -31,38 +32,60 @@ public class CompareStep {
     public void selectCategory() {
         action.clickElement(CompareComponent.listCategory);
     }
+
     @And("Select SubCategory QNED")
     public void SelectSbuCategory() {
         action.clickElement(CompareComponent.subCategory);
     }
-//    @And("Select Random Product and Get Price")
-//    public void selectRandomProduct(){
-//        String pricePLP = action.getText(CompareComponent.productPricePLP);
-//        System.out.println(pricePLP);
-//        Serenity.setSessionVariable("pricePLP").to(pricePLP);
-//    }
 
     @And("Select Random Product and Get Price")
     public void getListInfo(){
-        List<WebElement> listProduct = ThucydidesWebDriverSupport.getDriver().findElements(By.xpath("//li[@class='c-product-list__item productcollection__item']//div[@class='c-product-item__head']"));
+//        get list product
+        List<WebElement> listProduct = ThucydidesWebDriverSupport.getDriver().findElements(By.xpath("//li[@class='c-product-list__item productcollection__item']//div[@class='c-product-item__ufn']//a"));
+
+//        get random product
         int size = listProduct.size();
-        System.out.println(size);
         Random randomListProduct = new Random();
         int randomValue = randomListProduct.nextInt(size);
-        WebElement product = listProduct.get(randomValue);
-        System.out.println("product >>> "+product);
-        product.click();
-        action.pause(5000);
+        for(int i=1; i <= size; i++){
+            WebElement product = ThucydidesWebDriverSupport.getDriver().findElement(By.xpath("(//li[@class='c-product-list__item productcollection__item'])"+"["+randomValue+"]"));
+
+//        get price in PDP
+            System.out.println("Element product: "+product);
+            try {
+                WebElement elementPricePLP = ThucydidesWebDriverSupport.getDriver().findElement(By.xpath("(//li[@class='c-product-list__item productcollection__item'])"+"["+randomValue+"]"+"//div[@class='c-price__purchase']"));
+                String pricePLP = elementPricePLP.getText().replaceAll("[^0-9\\.]", "");
+                Serenity.setSessionVariable("pricePLP").to(pricePLP);
+                System.out.println("price in PLP: "+pricePLP);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+
+//        select random product
+            try {
+
+                WebElement elementPricePDP = ThucydidesWebDriverSupport.getDriver().findElement(By.xpath("(//li[@class='c-product-list__item productcollection__item'])"+"["+randomValue+"]"+"//div[@class='c-product-item__ufn']//a"));
+                action.pause(5000);
+                elementPricePDP.click();
+                action.pause(3000);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            break;
+        }
     }
+
     @And("Product Detail and Get Price")
     public void getPricePDP(){
-//        action.clickElement(CompareComponent.product);
-        String pricePDP = action.getText(CompareComponent.productPricePDP);
-        System.out.println("Price in PDP: "+pricePDP);
-        Serenity.setSessionVariable("pricePDP").to(pricePDP);
+        try{
+            WebElement elementPrcePDP = ThucydidesWebDriverSupport.getDriver().findElement(By.xpath("(//div[@class='c-price__purchase'])[1]"));
+            String pricePDP = elementPrcePDP.getText().replaceAll("[^0-9\\.]", "");
+            Serenity.setSessionVariable("pricePDP").to(pricePDP);
+            System.out.println("Price in PDP: "+pricePDP);
+        } catch (Exception e){
+            System.out.println(e);
+        }
 
-        String attribute = action.getAttribute(CompareComponent.attributeProduct, "data-sku");
-        System.out.println("Attribute: "+ attribute);
     }
 
     @Then ("Compare Price")
@@ -75,4 +98,3 @@ public class CompareStep {
         }
     }
 }
-
