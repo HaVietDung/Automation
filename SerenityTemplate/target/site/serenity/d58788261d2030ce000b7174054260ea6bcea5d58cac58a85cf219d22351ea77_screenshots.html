@@ -154,7 +154,7 @@
             <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 31-10-2023 18:11</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 01-11-2023 16:40</span>
     <br style="clear:left"/>
 </div>
 
@@ -195,9 +195,9 @@
                 <table class="outcome-header">
                     <tr>
                         <td colspan="2" class="test-title-bar">
-                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon fa-2x' title='ERROR'></i></a></span>
                             <span class="test-case-title">
-                                <span class="success-color">Get List Product And Export To File
+                                <span class="error-color">Get List Product And Export To File
                                     <span class="related-issue-title"></span>
                                 </span>
                             </span>
@@ -213,23 +213,58 @@
 
     <div class="story-title">
         <h3>Scenario:</h3>
-        <div class="scenario">Given Auto open url &lt;url1&gt;<br>When Select Random Category<br>And Select Random SubCategory<br>And Get Data In PDP</div>
+        <div class="scenario">Given Auto open url &lt;url1&gt;<br>When Select Random Category<br>And Select Random SubCategory<br>And Get Info Product</div>
     </div>
 
     <div id="beforetable"></div>
     <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">Element click intercepted exception: element click intercepted: Element is not clickable at point (1014, 2605)</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall"
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="bi bi-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>org.openqa.selenium.ElementClickInterceptedException </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>smartosc.lesson4.Lesson4Step.getDataInPDP(Lesson4Step.java:125)<br />✽.Get Info Product(file:///C:/Users/dunghv1/Desktop/Automation/SerenityTemplate/src/test/resources/features/login/login_magento.feature:39)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+                <div class="panel-body">
+                    <a href="pagesource8385742677795564531.html" target="_blank" class="btn btn-info">HTML Source</a>
+                </div>
+            </div>
         <div class="slider-wrapper theme-default">
             <div id="slider">
-                <img src="3bc9f952448652c9353fb3092e8177eca70587120e988c5f56dc9f787c8c650e.png" title=" 1: Get List Product And Export To File ({url1=https://www.lg.com/uk/})" width="1920"/>
-                <img src="3bc9f952448652c9353fb3092e8177eca70587120e988c5f56dc9f787c8c650e.png" title=" Given Auto open url https://www.lg.com/uk/" width="1920"/>
-                <img src="3bc9f952448652c9353fb3092e8177eca70587120e988c5f56dc9f787c8c650e.png" title=" Open url https://www.lg.com/uk/" width="1920"/>
-                <img src="3bc9f952448652c9353fb3092e8177eca70587120e988c5f56dc9f787c8c650e.png" title=" Auto opens the https://www.lg.com/uk/" width="1920"/>
-                <img src="3bc9f952448652c9353fb3092e8177eca70587120e988c5f56dc9f787c8c650e.png" title=" Open url https://www.lg.com/uk/ (completed)" width="1920"/>
-                <img src="3bc9f952448652c9353fb3092e8177eca70587120e988c5f56dc9f787c8c650e.png" title=" Given Auto open url https://www.lg.com/uk/ (completed)" width="1920"/>
-                <img src="e0deacedf032e5a44bdd8f98a2126c0f08578deac57f34ca6f4fd467c1fd47e3.png" title=" When Select Random Category" width="1920"/>
-                <img src="964ee810e2061b64f3be91c2a34afb8dd9d01c674c3e997db2f0ec6dedfd4e7d.png" title=" And Select Random SubCategory" width="1920"/>
-                <img src="77e61e674d9a882fa83de0ffda58e5a919e1e3bc13f90941d99c4faadace499a.png" title=" And Get Data In PDP" width="1920"/>
-                <img src="77e61e674d9a882fa83de0ffda58e5a919e1e3bc13f90941d99c4faadace499a.png" title=" 1: Get List Product And Export To File ({url1=https://www.lg.com/uk/}) (completed): <span class='success-color'>SUCCESS</span>" width="1920"/>
+                <img src="6a750fdfdcae5e51b4b7dc682762ed68950694e2a420b6e3225d36f76bed51d7.png" title=" 1: Get List Product And Export To File ({url1=https://www.lg.com/uk/})" width="1920"/>
+                <img src="6a750fdfdcae5e51b4b7dc682762ed68950694e2a420b6e3225d36f76bed51d7.png" title=" Given Auto open url https://www.lg.com/uk/" width="1920"/>
+                <img src="6a750fdfdcae5e51b4b7dc682762ed68950694e2a420b6e3225d36f76bed51d7.png" title=" Open url https://www.lg.com/uk/" width="1920"/>
+                <img src="6a750fdfdcae5e51b4b7dc682762ed68950694e2a420b6e3225d36f76bed51d7.png" title=" Auto opens the https://www.lg.com/uk/" width="1920"/>
+                <img src="6a750fdfdcae5e51b4b7dc682762ed68950694e2a420b6e3225d36f76bed51d7.png" title=" Given Auto open url https://www.lg.com/uk/" width="1920"/>
+                <img src="6a750fdfdcae5e51b4b7dc682762ed68950694e2a420b6e3225d36f76bed51d7.png" title=" Open url https://www.lg.com/uk/ (completed)" width="1920"/>
+                <img src="bbd5ac22865bc519dc5b4c9d2395c4aed0fbc6b67c7b4d8615eaa2859203e370.png" title=" When Select Random Category" width="1920"/>
+                <img src="8e21e805899b141a2124813a7b1690dd4938d8c7afa98d0416f7b192c46e2d59.png" title=" And Select Random SubCategory" width="1920"/>
+                <img src="010ad07ee9171e0444c56556ee9ddfe820884938ebca3588804516a45b7ba7d4.png" title=" And Get Info Product: <span class='error-color'>ERROR</span>" width="1920"/>
             </div>
         </div>
 

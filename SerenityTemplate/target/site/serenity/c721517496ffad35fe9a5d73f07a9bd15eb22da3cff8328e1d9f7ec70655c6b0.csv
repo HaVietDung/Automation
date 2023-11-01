@@ -1,4 +1,4 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
 "Login","Đăng nhập vào trang SSO AEM","SUCCESS","2023-10-23T17:31:45.7089985+07:00[Asia/Bangkok]","0.0","55.55"
 "Login","Compare giá sản phẩm ở PDP và PLD","SUCCESS","2023-10-31T14:00:28.523+07:00[Asia/Bangkok]","0.0","20.47"
-"Login","Get List Product And Export To File","SUCCESS","2023-10-31T18:11:58.114+07:00[Asia/Bangkok]","0.0","33.08"
+"Login","Get List Product And Export To File","ERROR","2023-11-01T16:40:26.513+07:00[Asia/Bangkok]","0.0","32.65"
