@@ -57,7 +57,7 @@ public class Lesson4Step {
 
     @And("Select Random SubCategory")
     public void selectSubCategory() {
-
+        int valueRandomCategory = Serenity.sessionVariableCalled("valueRandomCategory");
 //        get xpath subcategory
         List<WebElement> listSubcategory = ThucydidesWebDriverSupport.getDriver().findElements(By.xpath(Lesson4.listCategory + "[" + valueRandomCategory + "]" + Lesson4.listSubCategory));
         int size = listSubcategory.size();
@@ -116,40 +116,35 @@ public class Lesson4Step {
             }
         } else {
             for (int i = 1; i < sizePage; i++) {
-                WebElement numPage = listPage.get(i);
-                action.pause(5000);
-                numPage.click();
-                action.pause(5000);
+//                WebElement numPage = listPage.get(i);
+//                numPage.click();
+                for (int j = 1; j < sizeProduct; j++) {
+                    try {
+                        System.out.println("---------- Infomation Product " + j + " ----------");
 
-                if (i == 1) {
-                    for (int j = 1; j < sizeProduct; j++) {
-                        try {
-                            System.out.println("---------- Infomation Product " + j + " ----------");
+                        //get attibute
+                        WebElement elementData_s = ThucydidesWebDriverSupport.getDriver().findElement(By.xpath(Lesson4.listProduct + "[" + j + "]" + Lesson4.skuProduct));
 
-                            //get attibute
-                            WebElement elementData_s = ThucydidesWebDriverSupport.getDriver().findElement(By.xpath(Lesson4.listProduct + "[" + j + "]" + Lesson4.skuProduct));
+                        String data_s = elementData_s.getAttribute("data-s");
+                        Serenity.setSessionVariable("data-s").to(data_s);
+                        System.out.println("data-s: " + data_s);
 
-                            String data_s = elementData_s.getAttribute("data-s");
-                            Serenity.setSessionVariable("data-s").to(data_s);
-                            System.out.println("data-s: " + data_s);
+                        String nameProduct = elementData_s.getText();
+                        Serenity.setSessionVariable("nameProduct").to(nameProduct);
+                        System.out.println("name: " + nameProduct);
 
-                            String nameProduct = elementData_s.getText();
-                            Serenity.setSessionVariable("nameProduct").to(nameProduct);
-                            System.out.println("name: " + nameProduct);
+                        String linkProduct = elementData_s.getAttribute("href");
+                        Serenity.setSessionVariable("linkProduct").to(linkProduct);
+                        System.out.println("link: " + linkProduct);
 
-                            String linkProduct = elementData_s.getAttribute("href");
-                            Serenity.setSessionVariable("linkProduct").to(linkProduct);
-                            System.out.println("link: " + linkProduct);
+                        WebElement elementPrice = ThucydidesWebDriverSupport.getDriver().findElement(By.xpath(Lesson4.listProduct + "[" + i + "]" + Lesson4.priceProduct));
+                        String priceProduct = elementPrice.getText();
+                        Serenity.setSessionVariable("priceProduct").to(priceProduct);
+                        System.out.println("price: " + priceProduct);
 
-                            WebElement elementPrice = ThucydidesWebDriverSupport.getDriver().findElement(By.xpath(Lesson4.listProduct + "[" + i + "]" + Lesson4.priceProduct));
-                            String priceProduct = elementPrice.getText();
-                            Serenity.setSessionVariable("priceProduct").to(priceProduct);
-                            System.out.println("price: " + priceProduct);
-
-                            handleFile.writeFile();
-                        } catch (Exception e) {
-                            System.out.println(e);
-                        }
+                        handleFile.writeFile();
+                    } catch (Exception e) {
+                        System.out.println(e);
                     }
                 }
             }

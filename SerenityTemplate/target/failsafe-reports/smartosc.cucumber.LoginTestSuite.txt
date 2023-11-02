@@ -1,9 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: smartosc.cucumber.LoginTestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 11.147 s <<< FAILURE! - in smartosc.cucumber.LoginTestSuite
-Login.Get List Product And Export To File  Time elapsed: 8.535 s  <<< ERROR!
-java.lang.NullPointerException
-	at smartosc.lesson4.Lesson4Step.selectCategory(Lesson4Step.java:33)
-	at ✽.Select Random Category(file:///C:/Users/dunghv1/Desktop/Automation/SerenityTemplate/src/test/resources/features/login/login_magento.feature:38)
-
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.859 s - in smartosc.cucumber.LoginTestSuite

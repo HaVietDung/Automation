@@ -1,2 +1,3 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
 "Login","Compare giá sản phẩm ở PDP và PLD","SUCCESS","2023-10-31T14:00:28.523+07:00[Asia/Bangkok]","0.0","20.47"
+"Login","Get List Product And Export To File","SUCCESS","2023-11-02T09:18:03.022+07:00[Asia/Bangkok]","0.0","28.57"
